@@ -1,0 +1,22 @@
+{
+  "name": "John Doe",
+  "id": "5552342",
+  "roles": [
+    {
+      "name": "Developer",
+      "id": "dev_01"
+    },
+    {
+      "name": "alpha",
+      "id": "alpha_01"
+    },
+    {
+      "name": "Beta",
+      "id": "beta_01"
+    },
+    {
+      "name": "player",
+      "id": "player_01"
+    }
+  ]
+}

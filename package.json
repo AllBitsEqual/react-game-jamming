@@ -7,8 +7,8 @@
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx ./ || true",
-    "fix": "tsc --noEmit && eslint --fix --ext .js,.jsx,.ts,.tsx ./ || true",
+    "lint": "tsc --noEmit && eslint --ext .ts,.tsx ./ || true",
+    "fix": "tsc --noEmit && eslint --fix --ext .ts,.tsx ./ || true",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "mock-server": "node mock-server/index.js"

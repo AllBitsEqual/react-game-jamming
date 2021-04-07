@@ -14,6 +14,7 @@ export type UnitData = {
     id: string
     race: RaceName
     hp: AttributeValues
+    attack: number
     mp?: AttributeValues
     interval: AttributeValues
 }
@@ -35,8 +36,14 @@ export type UnitMods = {
     hp?: number
     mpCurrent?: number
     mp?: number
+    attack?: number
     intervalCurrent?: number
     interval?: number
+}
+
+export type UnitChange = {
+    unitID: string,
+    newValues: Partial<Unit>
 }
 
 export type CreateUnitProps = {

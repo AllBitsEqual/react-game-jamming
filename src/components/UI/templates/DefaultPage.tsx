@@ -14,7 +14,7 @@ const DefaultPage = ({ children }: DefaultPageProps): React.ReactElement => (
 )
 
 const StyledContainer = styled.div`
-    padding: 0 ${props => props.theme.spacer.side}px;
+    padding: 0 20px;
 `
 
 export default DefaultPage

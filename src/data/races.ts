@@ -7,6 +7,7 @@ export type RaceData = {
     name: RaceName
     hp: number
     mp?: number
+    attack: number
     interval: number
     intervalStart: number
     resistance?: Resistance
@@ -20,12 +21,14 @@ const raceData: RaceConfig = {
     human: {
         name: "human",
         hp: 100,
+        attack: 40,
         interval: 50,
         intervalStart: 50,
     },
     elf: {
         name: "elf",
         hp: 80,
+        attack: 40,
         interval: 40,
         intervalStart: 40,
         resistance: {
@@ -36,6 +39,7 @@ const raceData: RaceConfig = {
     orc: {
         name: "orc",
         hp: 140,
+        attack: 30,
         interval: 80,
         intervalStart: 80,
         resistance: {
@@ -45,6 +49,7 @@ const raceData: RaceConfig = {
     goblin: {
         name: "goblin",
         hp: 60,
+        attack: 20,
         interval: 50,
         intervalStart: 50,
         resistance: {

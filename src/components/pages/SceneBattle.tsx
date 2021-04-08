@@ -20,10 +20,10 @@ const SceneBattle = (): React.ReactElement => {
     const clickUnitHandler = (id: string) => setSelectedUnit(id !== selectedUnit ? id : null)
 
     useEffect(() => {
-        console.log("Scene Battle mounted")
+        // console.log("Scene Battle mounted")
 
         return () => {
-            console.log("Scene Battle unmounted")
+            // console.log("Scene Battle unmounted")
         }
     })
 

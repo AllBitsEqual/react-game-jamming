@@ -1,7 +1,15 @@
-import { Prototype, } from '../components/pages'
+import { SceneBattle, SceneHome, SceneCamp } from '../components/pages'
 
 export default [{
-    label: 'Dashboard',
+    label: 'Home',
     path: '/',
-    component: Prototype
+    component: SceneHome
+}, {
+    label: 'Camp',
+    path: '/Camp',
+    component: SceneCamp
+}, {
+    label: 'Battle',
+    path: '/Battle',
+    component: SceneBattle
 }]

@@ -1,12 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
+import { InternalNavLink } from '../../links'
 
 export type DefaultPageProps = {
     children: React.ReactNode
+    backLink?: string
 }
 
-const DefaultPage = ({ children }: DefaultPageProps): React.ReactElement => (
+const DefaultPage = ({
+    backLink,
+    children,
+}: DefaultPageProps): React.ReactElement => (
     <>
+        {backLink && (<InternalNavLink to={backLink}>back</InternalNavLink>)}
         <StyledContainer>
             {children}
         </StyledContainer>

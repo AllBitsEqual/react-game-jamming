@@ -57,6 +57,10 @@ const increaseBattleCounter = createAction(
     })
 )
 
+export const resetBattle = createAction(
+    '[BATTLE] reset existing battle'
+)
+
 export const selectBattleState = (state: RootState): BattleLoop => state.battleLoop
 
 export const battleLoopMiddleware: Middleware = ({dispatch, getState}) => next => action => {

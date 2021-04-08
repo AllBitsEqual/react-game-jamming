@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { UnitData } from '../../data/units/types'
 import Unit from './Unit'
-import { useCombatUnits, useEnemyUnits, usePlayerUnits } from '../../data/units/hooks'
-import { createInitialUnits } from '../../data/testData'
-import { useReduxDispatch, useReduxSelector } from '../../redux'
-import { initialiseBattle, selectBattleState } from '../../redux/ducks/battleLoop'
+import { useReduxSelector } from '../../redux'
+import { selectBattleState } from '../../redux/ducks/battleLoop'
 import { selectActiveUnit } from '../../redux/ducks/animation'
 
 type ArenaProps = {
+    playerUnits: UnitData[],
+    enemyUnits: UnitData[],
     selectedUnit: string | null;
     clickHandler: (id: string) => void;
 };
@@ -31,20 +31,18 @@ const renderUnit = (
     </StyledButton>
 )
 
-const Arena = ({ selectedUnit, clickHandler }: ArenaProps): React.ReactElement => {
-    const units = useCombatUnits(createInitialUnits())
-    const playerUnits = usePlayerUnits()
-    const enemyUnits = useEnemyUnits()
-    const dispatch = useReduxDispatch()
+const Arena = ({
+   playerUnits,
+   enemyUnits,
+   selectedUnit,
+   clickHandler,
+}: ArenaProps): React.ReactElement => {
+
 
     const { phase, counter } = useReduxSelector(selectBattleState)
     const activeUnit = useReduxSelector(selectActiveUnit)
 
-    useEffect(() => {
-        if (phase === 'inactive') {
-            dispatch(initialiseBattle())
-        }
-    }, [dispatch, units, phase])
+
 
     return (
         <div>
@@ -83,7 +81,6 @@ const Arena = ({ selectedUnit, clickHandler }: ArenaProps): React.ReactElement =
             <br />
             <br />
             <hr />
-            { selectedUnit && units[selectedUnit] && (<p>Selected Unit: {units[selectedUnit].name}</p>) }
         </div>
     )
 }
